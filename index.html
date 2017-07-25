@@ -18,7 +18,7 @@
             :<a href="#" onClick="showInstructionsModal()">instructions</a>
           </li>
           <li>
-            :<a href="?gist-id=daiyi/6ca3d5fd72c3d79b3f1e77cb754006b5">demos</a>
+            :<a href="/demos">demos</a>
           </li>
           <li>
             :<a href="https://github.com/Day8/re-frame/blob/master/docs/README.md">docs</a>
@@ -34,11 +34,12 @@
     </div>
     <div class="panel">
         <div id="app">
-          <div id="app-examples" class="hidden">
-            <h1>re-frame demos</h1>
+          <div id="app-demo-list" class="hidden">
+            <h1>re-playground</h1>
             <p>Try your hand at writing re-frame with reagent by starting with a
                <a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">template</a>,
                or investigate the examples below!</p>
+            <h2>re-frame + reagent demos</h2>
             <ul>
               <li><a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">hello world</a></li>
               <li><a href="?gist-id=saskali/1398f41345ea4df551b0c370ac1ac822">timer</a></li>
@@ -118,7 +119,7 @@
       }
       else {
         document.getElementById("app-loading-message").classList.add("hidden")
-        document.getElementById("app-examples").classList.remove("hidden")
+        document.getElementById("app-demo-list").classList.remove("hidden")
       }
 
       document.body.appendChild(klipse)
