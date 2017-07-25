@@ -1,0 +1,90 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  line-height: 1.5em;
+}
+.CodeMirror {
+  border: none;
+  /*background: #e6e4eb;*/
+}
+.CodeMirror-scroll {
+  /*padding: 10px;*/
+}
+.CodeMirror + .CodeMirror {
+  /* todo show debugging in a sensible way */
+  display: none;
+}
+.page {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.panel {
+  flex: 1;
+  max-width: 49%;
+  height: 100%;
+  /*padding: 10px;*/
+}
+.panel-editor {
+  background: #200020;
+  /*border: 10px solid #fff;
+  box-sizing: border-box;*/
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  flex: 0 1 auto;
+  width: 100%;
+  background: #2f1c2f;
+}
+
+#editor {
+  height: 100%;
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+}
+
+.editor-wrapper {
+  flex: 1;
+  overflow: auto;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+}
+.nav li {
+  color: #888888;
+  display: inline-block;
+  margin:  5px;
+}
+.nav li a {
+  border: none;
+  transition: color 0.8s ease;
+  color: #6f95e2;
+}
+.nav li a:hover {
+  color: #7bc14d;
+}
+
+/* don't flash the code before klipse finishing running */
+pre#editor-contents {
+  display: none;
+}
+
+code {
+  background: #eee;
+  color: #3b197f;
+}
+
+.hidden {
+  display: none;
+}

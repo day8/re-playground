@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="./editor-theme.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="panel panel-editor">
+      <div class="nav">
+        <ul>
+          <li>
+            :<a href="/">re-playground</a>
+          </li>
+          <li>
+            :<a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">instructions</a>
+          </li>
+          <li>
+            :<a href="?gist-id=daiyi/6ca3d5fd72c3d79b3f1e77cb754006b5">demos</a>
+          </li>
+          <li>
+            :<a href="https://github.com/Day8/re-frame/blob/master/docs/README.md">docs</a>
+          </li>
+        </ul>
+      </div>
+      <div class="editor-wrapper">
+        <div id="editor">
+          <pre id="editor-contents">
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+        <div id="app">
+          <div id="app-examples" class="hidden">
+            <h1>re-frame demos</h1>
+            <p>Try your hand at writing re-frame with reagent by starting with a
+               <a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">template</a>,
+               or investigate the examples below!</p>
+            <ul>
+              <li><a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">hello world</a></li>
+              <li><a href="?gist-id=saskali/1398f41345ea4df551b0c370ac1ac822">timer</a></li>
+              <li><a href="/">to-do list</a></li>
+            </ul>
+          </div>
+          <div id="app-loading-message">
+            <p>loading...</p>
+            <p>(did you remember to render to <code>(js/document.getElementById "app"</code>?)</p>
+            <p>
+              (see <a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">instructions</a> for help).
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script>
+     window.klipse_settings = {
+       selector: '#editor-contents', // css selector for the html elements you want to klipsify
+       eval_idle_msec: 300,
+       codemirror_options_in: {
+         autoCloseBrackets: true,
+         lineNumbers: true,
+         lineWrapping: true,
+         theme: 'amy'
+       }
+     };
+
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function loadCode()  {
+      var gistId = getParameterByName('gist-id', window.location.href)
+      var klipse = document.createElement('script')
+      klipse.setAttribute('src', 'https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js')
+
+      if (gistId) {
+        var editor = document.getElementById('editor-contents')
+        editor.setAttribute('data-gist-id', gistId)
+      }
+      else {
+        document.getElementById("app-loading-message").classList.add("hidden")
+        document.getElementById("app-examples").classList.remove("hidden")
+      }
+
+      document.body.appendChild(klipse)
+    };
+
+    loadCode();
+  </script>
+</body>
