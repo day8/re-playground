@@ -15,7 +15,7 @@
             :<a href="/">re-playground</a>
           </li>
           <li>
-            :<a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">instructions</a>
+            :<a href="#" onClick="showInstructionsModal()">instructions</a>
           </li>
           <li>
             :<a href="?gist-id=daiyi/6ca3d5fd72c3d79b3f1e77cb754006b5">demos</a>
@@ -56,6 +56,35 @@
       </div>
   </div>
 
+  <div id="instructions-modal" class="modal">
+      <button class="close-button" onClick="hideInstructionsModal()">&times;</button>
+      <div class="modal-content">
+          <h1>re-playground</h1>
+          <p>
+              code is livereloaded.
+              this right-hand panel has the id 'app'.
+              to render reagent into this panel, target this element with
+              <code>(js/document.getElementById 'app')</code>.
+              see the
+              <a href="?gist-id=daiyi/6ca3d5fd72c3d79b3f1e77cb754006b5">examples!</a>
+          </p>
+          <h2>load from gist</h2>
+          <p>
+              to easily share re-frame sketches, you can save your code to a 
+              <a href="https://gist.github.com">github gist</a>
+              and load it into this editor with the url param:
+              <code>gist-id=[github-username]/[gist-id]</code>
+          </p>
+          <p>
+              for example:
+              <a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d</a>
+          </p>
+      </div>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay" onClick="hideInstructionsModal()">
+  </div>
+
   <script>
      window.klipse_settings = {
        selector: '#editor-contents', // css selector for the html elements you want to klipsify
@@ -94,6 +123,22 @@
 
       document.body.appendChild(klipse)
     };
+
+    function showInstructionsModal() {
+        var modal = document.getElementById("instructions-modal");
+        modal.style.display = "block";
+
+        var modalOverlay = document.getElementById("modal-overlay");
+        modalOverlay.style.display = "block";
+    }
+
+    function hideInstructionsModal() {
+        var modal = document.getElementById("instructions-modal");
+        modal.style.display = "none";
+
+        var modalOverlay = document.getElementById("modal-overlay");
+        modalOverlay.style.display = "none";
+    }
 
     loadCode();
   </script>

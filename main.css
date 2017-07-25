@@ -88,3 +88,45 @@ code {
 .hidden {
   display: none;
 }
+
+.modal {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    border: 1px solid grey;
+    left: 25%;
+    right: 25%;
+    top: 20%;
+    bottom: 20%;
+    background-color: white;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.modal-overlay {
+    position: absolute;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.close-button {
+    background-color: transparent;
+    font-size: 26px;
+    position: relative;
+    float: right;
+    border: none;
+    cursor: pointer;
+    right: -30px;
+    top: -30px;
+}
