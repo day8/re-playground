@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <head>
   <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="./main.css">
   <link rel="stylesheet" type="text/css" href="./editor-theme.css">
 </head>
 
@@ -12,13 +12,13 @@
       <div class="nav">
         <ul>
           <li>
-            :<a href="/">re-playground</a>
+            :<a href="/re-playground">re-playground</a>
           </li>
           <li>
             :<a href="#" onClick="showInstructionsModal()">instructions</a>
           </li>
           <li>
-            :<a href="/demos">demos</a>
+            :<a href="/re-playground/demos">demos</a>
           </li>
           <li>
             :<a href="https://github.com/Day8/re-frame/blob/master/docs/README.md">docs</a>
@@ -43,14 +43,14 @@
             <ul>
               <li><a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">hello world</a></li>
               <li><a href="?gist-id=saskali/1398f41345ea4df551b0c370ac1ac822">timer</a></li>
-              <li><a href="/">to-do list</a></li>
+              <li><a href="#">to-do list</a></li>
             </ul>
           </div>
           <div id="app-loading-message">
             <p>loading...</p>
             <p>(did you remember to render to <code>(js/document.getElementById "app"</code>?)</p>
             <p>
-              (see <a href="?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec0337d">instructions</a> for help).
+              (see <a href="#" onClick="showInstructionsModal()">instructions</a> for help).
             </p>
           </div>
         </div>
@@ -67,11 +67,11 @@
               to render reagent into this panel, target this element with
               <code>(js/document.getElementById 'app')</code>.
               see the
-              <a href="?gist-id=daiyi/6ca3d5fd72c3d79b3f1e77cb754006b5">examples!</a>
+              <a href="/re-playground/demos">demos</a>!
           </p>
           <h2>load from gist</h2>
           <p>
-              to easily share re-frame sketches, you can save your code to a 
+              to easily share re-frame sketches, you can save your code to a
               <a href="https://gist.github.com">github gist</a>
               and load it into this editor with the url param:
               <code>gist-id=[github-username]/[gist-id]</code>
