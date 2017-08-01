@@ -32,7 +32,7 @@ body, html {
   background: #200020;
   /*border: 10px solid #fff;
   box-sizing: border-box;*/
-
+  color: #eeeeee;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -62,9 +62,11 @@ body, html {
   margin: 0;
 }
 .nav li {
+  font-size: 1.1em;
   color: #888888;
   display: inline-block;
   margin:  5px;
+  vertical-align: middle;
 }
 .nav li a {
   border: none;
@@ -134,4 +136,15 @@ code {
     cursor: pointer;
     right: -30px;
     top: -30px;
+}
+
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 5px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    background: transparent;
 }
