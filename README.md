@@ -25,7 +25,7 @@ https://day8.github.io/re-playground?gist-id=daiyi/62db9d22136503a42cbbe5dc5ec03
 Clone this project and enter the folder:
 
 ```
-git clone git@github.com:Day8/re-playground.git
+git clone git@github.com:day8/re-playground.git
 cd re-playground
 ```
 
